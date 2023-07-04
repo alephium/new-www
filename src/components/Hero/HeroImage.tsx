@@ -69,7 +69,7 @@ export default styled(HeroImage)`
   left: 0;
   bottom: 0;
 
-  @media ${deviceBreakPoints.mobile} {
+  @media ${deviceBreakPoints.tablet} {
     filter: brightness(0.5);
   }
 `

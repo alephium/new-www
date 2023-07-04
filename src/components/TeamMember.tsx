@@ -25,12 +25,13 @@ const TeamMember: FC<TeamMemberProps> = ({ name, role, image, className }) => (
 
 const TeamMemberName = styled.div`
   font-weight: var(--fontWeight-bold);
-  margin-top: var(--spacing-1);
+  margin-top: var(--spacing-2);
 `
 
 const TeamMemberRole = styled.div`
   font-size: var(--fontSize-14);
   line-height: var(--lineHeight-22);
+  color: ${({ theme }) => theme.textSecondary};
 `
 
 export default TeamMember

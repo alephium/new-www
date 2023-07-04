@@ -87,7 +87,7 @@ const TodoLists = styled(motion.div)`
   gap: 100px;
   margin-top: 70px;
 
-  @media ${deviceBreakPoints.mobile} {
+  @media ${deviceBreakPoints.tablet} {
     flex-direction: column;
     align-items: center;
     gap: 70px;
@@ -99,7 +99,7 @@ const TodoList = styled.div`
   flex-direction: column;
   width: 50%;
 
-  @media ${deviceBreakPoints.mobile} {
+  @media ${deviceBreakPoints.tablet} {
     align-items: center;
   }
 `
@@ -115,7 +115,7 @@ const TodoItems = styled(motion.div)<Alignment>`
   gap: 20px;
   justify-content: ${({ $alignRight }) => ($alignRight ? 'right' : 'left')};
 
-  @media ${deviceBreakPoints.mobile} {
+  @media ${deviceBreakPoints.tablet} {
     justify-content: center;
   }
 `
@@ -130,7 +130,7 @@ const TodoItem = styled(motion.div)`
   border: 1px solid ${({ theme }) => theme.borderPrimary};
   box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
 
-  @media ${deviceBreakPoints.mobile} {
+  @media ${deviceBreakPoints.tablet} {
     flex: 1;
   }
 `

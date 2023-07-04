@@ -64,25 +64,33 @@ const PageSectionNumbers = ({ content: { title, subtitle } }: Props) => {
     if (!explorerClient) return
 
     const fetchHashrateData = async () => {
-      const now = new Date().getTime()
-      const yesterday = now - ONE_DAY
+      try {
+        const now = new Date().getTime()
+        const yesterday = now - ONE_DAY
 
-      const { data } = await explorerClient.charts.getChartsHashrates({
-        fromTs: yesterday,
-        toTs: now,
-        'interval-type': 'hourly'
-      })
+        const { data } = await explorerClient.charts.getChartsHashrates({
+          fromTs: yesterday,
+          toTs: now,
+          'interval-type': 'hourly'
+        })
 
-      if (data && data.length > 0) updateStatsScalar('hashrate', Number(data[0].value))
+        if (data && data.length > 0) updateStatsScalar('hashrate', Number(data[0].value))
+      } catch (e) {
+        console.error(e)
+      }
     }
 
     const fetchAndUpdateStatsScalar = async (
       key: StatScalarKeys,
       fetchCall: () => Promise<HttpResponse<string | number>>
     ) => {
-      await fetchCall()
-        .then((res) => res.text())
-        .then((text) => updateStatsScalar(key, parseInt(text)))
+      try {
+        await fetchCall()
+          .then((res) => res.text())
+          .then((text) => updateStatsScalar(key, parseInt(text)))
+      } catch (e) {
+        console.error(e)
+      }
     }
 
     fetchHashrateData()
@@ -157,7 +165,7 @@ const NumbersSection = styled.section`
   padding-bottom: var(--spacing-20);
   background-color: ${({ theme }) => theme.bgTertiary};
 
-  @media ${deviceBreakPoints.mobile} {
+  @media ${deviceBreakPoints.tablet} {
     margin-top: var(--spacing-6);
     margin-bottom: var(--spacing-10);
   }
@@ -184,7 +192,7 @@ const NumbersColumn = styled(Column)`
     > div {
       padding-left: var(--spacing-6);
 
-      @media ${deviceBreakPoints.mobile} {
+      @media ${deviceBreakPoints.tablet} {
         padding-left: 0;
         padding-top: var(--spacing-9);
       }
@@ -195,7 +203,7 @@ const NumbersColumn = styled(Column)`
     > div {
       padding-right: var(--spacing-9);
 
-      @media ${deviceBreakPoints.mobile} {
+      @media ${deviceBreakPoints.tablet} {
         padding-right: 0;
       }
     }

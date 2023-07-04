@@ -409,6 +409,10 @@ footer:
         - text: Reward & grant program
           url: https://github.com/alephium/community/blob/master/Grant%26RewardProgram.md
           newTab: true
+        - text: Ambassador program
+          url: /ambassadors
+          newTab: false
+          isNew: true
     - title: About
       links:
         - text: Team

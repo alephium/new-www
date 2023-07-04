@@ -100,7 +100,7 @@ const SocialMediaIconsList = styled.div`
   margin-top: var(--spacing-12);
   background-color: ${({ theme }) => theme.bgTertiary};
 
-  @media ${deviceBreakPoints.ipad} {
+  @media ${deviceBreakPoints.mobile} {
     margin-top: 0;
   }
 `

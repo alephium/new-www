@@ -22,6 +22,12 @@
   src: url('../fonts/Inter-Bold.woff2') format('woff2'), url('../fonts/Inter-Bold.woff') format('woff');
 }
 
+@font-face {
+  font-family: 'Switzer';
+  font-weight: 100 1000;
+  src: url('../fonts/Switzer-Variable.ttf') format('truetype');
+}
+
 h2,
 h3 {
   font-weight: 600;

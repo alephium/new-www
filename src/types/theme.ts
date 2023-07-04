@@ -21,5 +21,8 @@ declare module 'styled-components' {
     linkAlt: string
 
     separator: string
+
+    highlight: string
+    highlightComplementary: string
   }
 }

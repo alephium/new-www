@@ -10,8 +10,10 @@ import Column from './Columns/Column'
 import ModalTeam from './ModalTeam'
 import ModalContact from './ModalContact'
 import ModalPrivacyPolicy from './ModalPrivacyPolicy'
+import { WindowLocation } from '@reach/router'
 
 import Logo from '../images/svgs/logo.svg'
+import { graphql, useStaticQuery } from 'gatsby'
 
 export interface FooterContentType {
   columns: {
@@ -21,23 +23,51 @@ export interface FooterContentType {
 }
 
 interface FooterProps {
-  content: FooterContentType
-  openPrivacyPolicyModal?: boolean
+  location: WindowLocation<unknown>
   className?: string
 }
 
-const Footer: FC<FooterProps> = ({ className, content, openPrivacyPolicyModal }) => {
+const Footer: FC<FooterProps> = ({ location, className }) => {
   const [isTeamModalOpen, setIsTeamModalOpen] = useState(false)
   const [isContactModalOpen, setIsContactModalOpen] = useState(false)
   const [isPrivacyPolicyModalOpen, setIsPrivacyPolicyModalOpen] = useState(false)
-  const columnsContent = content.columns
-  columnsContent[2].links[0] = { ...columnsContent[2].links[0], openModal: setIsTeamModalOpen }
-  columnsContent[2].links[2] = { ...columnsContent[2].links[2], openModal: setIsContactModalOpen }
-  columnsContent[2].links[3] = { ...columnsContent[2].links[3], openModal: setIsPrivacyPolicyModalOpen }
+
+  const params = new URLSearchParams(location.search)
+
+  const openPrivacyPolicyModal = params.get('privacy') !== null
+
+  const data = useStaticQuery(graphql`
+    query {
+      allMarkdownRemark(filter: { fileAbsolutePath: { regex: "/homepage.md/" } }) {
+        nodes {
+          frontmatter {
+            footer {
+              columns {
+                title
+                links {
+                  text
+                  url
+                  newTab
+                  isNew
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  `)
 
   useEffect(() => {
     if (openPrivacyPolicyModal) setIsPrivacyPolicyModalOpen(true)
   }, [openPrivacyPolicyModal])
+
+  const footerContent = data.allMarkdownRemark.nodes[0].frontmatter.footer as FooterContentType
+
+  const columnsContent = footerContent.columns
+  columnsContent[2].links[0] = { ...columnsContent[2].links[0], openModal: setIsTeamModalOpen }
+  columnsContent[2].links[2] = { ...columnsContent[2].links[2], openModal: setIsContactModalOpen }
+  columnsContent[2].links[3] = { ...columnsContent[2].links[3], openModal: setIsPrivacyPolicyModalOpen }
 
   return (
     <div className={className}>

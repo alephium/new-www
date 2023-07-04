@@ -24,7 +24,7 @@ const Card = ({ className, children, ...props }: CardProps) => {
 
 export default styled(Card)`
   padding: 41px 30px 25px 34px;
-  border-radius: 9px;
+  border-radius: 12px;
   border: ${(props) => (props.thickBorders && '2px') || '1px'} solid ${(props) => props.borderColor || 'transparent'};
   background-color: ${(props) => props.bgColor || 'transparent'};
   background-clip: padding-box;

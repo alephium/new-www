@@ -35,7 +35,7 @@ export default styled.section`
     z-index: 1;
 
     .text-content {
-      @media ${deviceBreakPoints.mobile} {
+      @media ${deviceBreakPoints.tablet} {
         color: ${({ theme }) => theme.textPrimary};
       }
     }

@@ -241,7 +241,7 @@ const SectionTextHeaderStyled = styled(SectionTextHeader)`
   margin-bottom: var(--spacing-20);
   overflow: hidden;
 
-  @media ${deviceBreakPoints.mobile} {
+  @media ${deviceBreakPoints.tablet} {
     max-width: var(--page-width);
     margin: 0 auto var(--spacing-10);
     padding: 0 var(--spacing-4);
@@ -254,7 +254,7 @@ const TechSection = styled.div`
   position: relative;
   overflow: hidden;
 
-  @media ${deviceBreakPoints.mobile} {
+  @media ${deviceBreakPoints.tablet} {
     padding: var(--spacing-5) 0 var(--spacing-14);
   }
 `

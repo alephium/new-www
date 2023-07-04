@@ -24,14 +24,14 @@ export default styled(IllustrationColumn)`
     width: 70%;
     height: auto;
 
-    @media ${deviceBreakPoints.mobile} {
+    @media ${deviceBreakPoints.tablet} {
       width: 100%;
       max-width: var(--width-368);
       object-fit: contain;
     }
   }
 
-  @media ${deviceBreakPoints.mobile} {
+  @media ${deviceBreakPoints.tablet} {
     min-height: 200px;
   }
 `

@@ -95,7 +95,7 @@ const Subsections = styled.div`
 const SubsectionImageContainer = styled.div`
   flex-grow: 1;
 
-  @media ${deviceBreakPoints.mobile} {
+  @media ${deviceBreakPoints.tablet} {
     display: flex;
     justify-content: center;
     margin-bottom: var(--spacing-6);
@@ -110,7 +110,7 @@ const SubsectionImageContainer = styled.div`
 const SubsectionTextContent = styled.div`
   max-width: 50%;
 
-  @media ${deviceBreakPoints.mobile} {
+  @media ${deviceBreakPoints.tablet} {
     max-width: 100%;
   }
 `
@@ -120,7 +120,7 @@ const Subsection = styled(Columns)`
   align-items: center;
   gap: var(--spacing-2);
 
-  @media ${deviceBreakPoints.mobile} {
+  @media ${deviceBreakPoints.tablet} {
     flex-direction: column;
     gap: var(--spacing-4);
     align-items: stretch;
@@ -131,7 +131,7 @@ const Subsection = styled(Columns)`
       order: 2;
       text-align: right;
 
-      @media ${deviceBreakPoints.mobile} {
+      @media ${deviceBreakPoints.tablet} {
         order: 0;
       }
     }
@@ -140,7 +140,7 @@ const Subsection = styled(Columns)`
   &:not(:last-child) {
     margin-bottom: var(--spacing-20);
 
-    @media ${deviceBreakPoints.mobile} {
+    @media ${deviceBreakPoints.tablet} {
       margin-bottom: var(--spacing-10);
     }
   }

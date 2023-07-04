@@ -103,7 +103,7 @@ const IntroColumnContent = styled(motion.div)`
   column-gap: 30px;
   row-gap: 30px;
 
-  @media ${deviceBreakPoints.mobile} {
+  @media ${deviceBreakPoints.tablet} {
     flex-direction: column;
     grid-template-columns: 100%;
   }

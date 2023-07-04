@@ -47,7 +47,7 @@ const TechnologyPage = (props: TechnologyPageProps) => {
           <PageSectionTechnology content={content.page.technologySection} />
           <PageSectionSunOverTheMountains />
           <PageSectionFollowUs content={content.general.followUsSection} />
-          <Footer content={content.general.footer} />
+          <Footer location={props.location} />
         </ThemeProvider>
       </main>
     </>

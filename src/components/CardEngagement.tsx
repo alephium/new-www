@@ -1,5 +1,5 @@
 import { FC, ReactNode, PointerEvent } from 'react'
-import styled, { useTheme } from 'styled-components'
+import styled, { css, useTheme } from 'styled-components'
 
 import Card from './Card'
 import CardTextTeaser from './CardTextTeaser'
@@ -12,7 +12,7 @@ import { getPointerRelativePositionInElement } from '../utils/pointer'
 
 interface CardEngagementProps {
   title: string
-  link: SimpleLinkProps
+  link?: SimpleLinkProps
   image: { publicURL: string }
   children: ReactNode
   className?: string
@@ -91,6 +91,12 @@ const SimpleLinkStyled = styled(SimpleLink)`
   display: flex;
   flex: 1;
   perspective: 200px;
+
+  ${({ url }) =>
+    !url &&
+    css`
+      cursor: default !important;
+    `}
 `
 
 const CardContainer = styled(Card)`
@@ -102,7 +108,7 @@ const CardContainer = styled(Card)`
   border: var(--border-primary-dark);
   background-color: ${({ theme }) => theme.bgPrimary};
 
-  @media ${deviceBreakPoints.mobile} {
+  @media ${deviceBreakPoints.tablet} {
     & + & {
       margin-top: var(--spacing-4);
     }

@@ -42,7 +42,7 @@ const TeamList = styled.div`
   grid-template-columns: repeat(4, 1fr);
   gap: var(--spacing-4);
 
-  @media ${deviceBreakPoints.mobile} {
+  @media ${deviceBreakPoints.tablet} {
     grid-template-columns: repeat(2, 1fr);
   }
 `

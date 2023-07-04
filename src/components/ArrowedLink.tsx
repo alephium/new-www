@@ -9,10 +9,10 @@ export interface ArrowedLinkProps {
   className?: string
   IconComponent?: ElementType
   url?: string
-  text?: string
   newTab?: boolean
   openModal?: (x: boolean) => void
   altColor?: boolean
+  colorArrowOnly?: boolean
   onlyText?: boolean
   emoji?: string
   trackingName?: string
@@ -27,6 +27,7 @@ const ArrowedLink = ({
   newTab,
   openModal,
   altColor = false,
+  colorArrowOnly = false,
   emoji,
   trackingName
 }: ArrowedLinkProps) => {
@@ -54,6 +55,7 @@ export default styled(ArrowedLink)`
   align-items: center;
   font-weight: var(--fontWeight-semiBold);
   font-size: var(--fontSize-18);
+  color: ${({ theme, colorArrowOnly }) => (colorArrowOnly ? theme.textPrimary : theme.link)} !important;
 
   .icon {
     width: 1rem;

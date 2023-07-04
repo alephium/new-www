@@ -1,4 +1,4 @@
-import { FC } from 'react'
+import { FC, ReactNode } from 'react'
 import ReactModal from 'react-modal'
 import styled from 'styled-components'
 
@@ -13,10 +13,11 @@ export interface ModalProps {
   isOpen: boolean
   setIsOpen: (isOpen: boolean) => void
   title?: string
+  children?: ReactNode
   className?: string
 }
 
-const Modal: FC<ModalProps> = ({ isOpen, setIsOpen, title, children, className }) => (
+const Modal = ({ isOpen, setIsOpen, title, children, className }: ModalProps) => (
   <ReactModal
     isOpen={isOpen}
     contentLabel={`${title} modal`}

@@ -53,7 +53,7 @@ export default styled(Columns)`
   display: flex;
   gap: ${({ gap }) => gap || '0'};
 
-  @media ${deviceBreakPoints.mobile} {
+  @media ${deviceBreakPoints.tablet} {
     flex-direction: ${({ reverse }) => (reverse ? 'column-reverse' : 'column')};
   }
 `

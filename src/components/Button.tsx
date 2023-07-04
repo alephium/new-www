@@ -32,13 +32,13 @@ const Button = ({ onClick, className, children, url, newTab, trackingName }: But
   )
 
 export default styled(Button)`
-  background-color: var(--color-blue-100);
+  background-color: ${({ theme }) => theme.textPrimary};
   color: var(--color-white);
-  border-radius: var(--radius-small);
   padding: var(--spacing-2) var(--spacing-3);
   border: 0 solid;
   text-decoration: none;
   display: inline-flex;
+  width: fit-content;
 
   /* The following rules are the same as in the ArrowedLink, maybe extract? */
   align-items: center;
@@ -46,22 +46,24 @@ export default styled(Button)`
   font-size: var(--fontSize-18);
   transition: all 0.1s ease-out;
 
-  &:hover {
-    cursor: pointer;
-    filter: brightness(110%);
-    transform: translateY(calc(var(--spacing-half) * -1));
-    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
-  }
-
   .arrow {
     width: 11px;
     margin-left: var(--spacing-1);
     fill: var(--color-white);
+    transition: all 0.1s ease-out;
 
     ${(props) =>
       props.newTab &&
       css`
         transform: rotate(-45deg);
       `}
+  }
+
+  &:hover {
+    cursor: pointer;
+    .arrow {
+      transform: translateX(5px);
+      fill: ${({ theme }) => theme.highlight};
+    }
   }
 `

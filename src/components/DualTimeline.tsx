@@ -345,7 +345,7 @@ const YearHeader = styled.div`
     flex: 1;
   }
 
-  @media ${deviceBreakPoints.mobile} {
+  @media ${deviceBreakPoints.tablet} {
     top: ${yearRowPositionMobile};
   }
 
@@ -360,7 +360,7 @@ const YearDate = styled.div`
   font-size: var(--fontSize-28);
   padding: var(--spacing-3);
 
-  @media ${deviceBreakPoints.ipad} {
+  @media ${deviceBreakPoints.mobile} {
     transform: translateX(calc(50vw - 50%));
     text-align: center;
   }
@@ -385,7 +385,7 @@ const Header = styled.div`
   top: ${yearRowPositionDesktop};
   z-index: 4;
 
-  @media ${deviceBreakPoints.mobile} {
+  @media ${deviceBreakPoints.tablet} {
     top: ${yearRowPositionMobile};
   }
 
@@ -421,7 +421,7 @@ const HeaderStickyBackground = styled.div`
   z-index: 1;
   backdrop-filter: blur(20px);
 
-  @media ${deviceBreakPoints.mobile} {
+  @media ${deviceBreakPoints.tablet} {
     top: ${yearRowPositionMobile};
   }
 
