@@ -136,6 +136,15 @@ ecosystemSection:
         - title: 'UTXO Alliance'
           logo: '../images/svgs/utxo-aliance-logo-white.svg'
           url: https://utxo-alliance.org/
+        - title: 'Hearst'
+          logo: '../images/logos/hearst.png'
+          url: https://hearst-capital.com/
+        - title: 'Bitmain'
+          logo: '../images/svgs/bitmain.svg'
+          url: https://www.bitmain.com/
+        - title: 'Dia'
+          logo: '../images/svgs/dia.svg'
+          url: https://www.diadata.org/
 milestonesSection:
   title: Completed milestones
   subtitle: Building every day

@@ -2,7 +2,7 @@
   "aliveStatusCodes": [200, 999],
   "ignorePatterns": [
     {
-      "pattern": "^https://www.privacypolicygenerator.info"
+      "pattern": "^https://alephium.myspreadshop.ch"
     },
     {
       "pattern": "^https://www.metapool.tech/dashboard"
@@ -12,9 +12,6 @@
     },
     {
       "pattern": "^https://www.reddit.com/r/Alephium"
-    },
-    {
-      "pattern": "^https://alephium.myspreadshop.ch"
     }
   ]
 }
